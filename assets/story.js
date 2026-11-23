@@ -22,7 +22,8 @@
     var t = Math.min(1, Math.max(0, (f - 0.55) / 0.45)); t = t * t * (3 - 2 * t);
     var c = a.map(function (v, j) { return Math.round(v + (b[j] - v) * t); });
     var L = lum(c);
-    root.style.setProperty('--sky', 'rgb(' + c.join(',') + ')');
+    var key = c.join(','); if (key === sky.last) return; sky.last = key;
+    root.style.setProperty('--sky', 'rgb(' + key + ')');
     body.classList.toggle('onlight', L > 0.5);
     root.style.setProperty('--stars', Math.max(0, 1 - L * 2.6).toFixed(3));
     root.style.setProperty('--sun', Math.min(1, Math.max(0, (L - 0.12) * 1.6)).toFixed(3));
