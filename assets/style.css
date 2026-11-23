@@ -375,3 +375,11 @@ body.story:not(.scrolled) .fab{opacity:0;transform:translateY(20px);pointer-even
 @keyframes ogin{from{opacity:0;transform:translateX(14px)}}
 @media (min-width:1300px){.side-vr{display:block!important}.side-vr.home{display:none!important}}
 @media (min-width:1760px){.side-vr.home{display:block!important}}
+
+.side-vr .sv-en{display:block;padding:34px 20px 18px;border-radius:22px;background:linear-gradient(150deg,#2d5be3,#5fb3ff);color:#fff;text-decoration:none;position:relative}
+.side-vr .sv-en.e2{background:linear-gradient(150deg,#e86a3a,#f7b267)}
+.side-vr .sv-en b{display:block;font-size:19px;line-height:1.2;margin-bottom:8px}
+.side-vr .sv-en .sv-t{display:block;font-size:13px;opacity:.92;margin-bottom:14px}
+.side-vr .sv-en em{font-style:normal;display:inline-block;background:#fff;color:#1d2b55;border-radius:30px;padding:9px 18px;font-weight:600}
+.side-vr .erid{display:block;margin-top:10px;font-size:9.5px;line-height:1.25;opacity:.7}
+.side-vr .sv-en b,.side-vr .sv-en .sv-t{padding:0!important;margin-left:0!important}.side-vr .sv-en em{margin:0!important;padding:10px 18px!important;font-size:15px!important;line-height:1.2!important;white-space:nowrap}
