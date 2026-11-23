@@ -360,3 +360,12 @@ body.story:not(.scrolled) .fab{opacity:0;transform:translateY(20px);pointer-even
 @keyframes svb{50%{transform:translateY(-6px)}}
 .side-vr b{font:400 20px/1.2 var(--serif)}.side-vr .sv-t{font-size:14px;line-height:1.45;opacity:.85}
 .side-vr em{font-style:normal;font-weight:600;background:#F5CDA9;color:#16233A;border-radius:999px;padding:10px 18px;align-self:flex-start;margin-top:4px}
+.side-vr{display:none}
+@media (min-width:1300px){.side-vr{display:flex;flex-direction:column;gap:14px}.side-vr.home{display:none}}
+@media (min-width:1760px){.side-vr.home{display:flex}}
+.side-vr a{position:relative}
+.side-vr .sv-tour{background:linear-gradient(170deg,#0F3D52,#14596b 60%,#E8915A)}
+.side-vr .sv-tour .sv-img{height:110px}.side-vr .sv-tour .sv-img img{opacity:1}
+.side-vr .sv-tour em{background:#FFD66B}
+@media (min-width:1300px) and (max-height:900px){.side-vr .sv-img{height:84px}.side-vr .sv-tour .sv-img{height:84px}.side-vr .sv-t{font-size:13px}.side-vr b{font-size:18px}}
+.rot{display:contents}.rot>*+*{display:none}

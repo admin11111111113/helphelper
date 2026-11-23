@@ -61,3 +61,8 @@
 // боковая реклама прячется у подвала
 (function () { var f = document.querySelector('footer'); if (!f || !('IntersectionObserver' in window)) return;
   new IntersectionObserver(function (e) { document.body.classList.toggle('foot', e[0].isIntersecting); }).observe(f); })();
+// реклама: в каждом .rot показываем один случайный вариант
+[].forEach.call(document.querySelectorAll('.rot'), function (r) {
+  var n = r.children.length; if (n < 2) return; var keep = Math.floor(Math.random() * n);
+  for (var j = n - 1; j >= 0; j--) if (j !== keep) r.removeChild(r.children[j]);
+});
