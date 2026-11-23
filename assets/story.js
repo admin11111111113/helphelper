@@ -70,7 +70,7 @@
 // боковая реклама: пул вариантов, сначала туры, потом VideoRils; набор меняется по мере прокрутки
 (function () {
   var tpl = document.getElementById('oppool'); if (!tpl) return;
-  var by = { tr: [], vr: [], en: [] }, plan = [['tr', 'en'], ['vr', 'tr'], ['en', 'vr']], used = { tr: 0, vr: 0, en: 0 };
+  var by = { tr: [], vr: [], en: [], sr: [] }, plan = [['tr', 'sr'], ['en', 'vr'], ['tr', 'sr']], used = { tr: 0, vr: 0, en: 0, sr: 0 };
   [].slice.call(tpl.content.children).sort(function () { return Math.random() - .5; }).forEach(function (n) { by[n.dataset.b].push(n); });
   var gs = [].slice.call(document.querySelectorAll('.side-vr .og'));
   gs.forEach(function (g, k) { (plan[k] || []).forEach(function (b) { var n = by[b][used[b]++]; if (n) g.appendChild(n.cloneNode(true)); }); });
