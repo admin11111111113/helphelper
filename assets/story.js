@@ -58,3 +58,6 @@
     if (e.key === 'Escape') { var n = document.querySelector('.nav'); if (n && n.classList.contains('open')) document.querySelector('.burger').click(); }
   });
 })();
+// боковая реклама прячется у подвала
+(function () { var f = document.querySelector('footer'); if (!f || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (e) { document.body.classList.toggle('foot', e[0].isIntersecting); }).observe(f); })();

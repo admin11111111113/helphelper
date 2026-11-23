@@ -341,3 +341,22 @@ body.story:not(.scrolled) .fab{opacity:0;transform:translateY(20px);pointer-even
   .js .hero h1 span,.js .hero .lift{opacity:1;transform:none}
 }
 .article .credits,.article .lines,.article .list{padding-left:0}
+/* реклама сбоку, как на турах: липкая колонка справа на широких экранах */
+.side-vr{display:none}
+@media (min-width:1300px){
+ .side-vr{display:block;position:fixed;right:24px;top:110px;width:250px;z-index:30;transition:opacity .35s,transform .35s}
+ .side-vr.home{display:none}
+ body:not(.scrolled) .side-vr,body.foot .side-vr{opacity:0;transform:translateX(20px);pointer-events:none}
+}
+@media (min-width:1760px){.side-vr.home{display:block}}
+.side-vr a{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:#F3F1EC;border-radius:28px;overflow:hidden;padding-bottom:20px;background:linear-gradient(170deg,#1C2A4F,#2E2350 70%,#4a2d48);box-shadow:0 24px 50px rgba(13,27,51,.35);transition:transform .25s}
+.side-vr a:hover{transform:translateY(-4px)}
+.side-vr a>b,.side-vr .sv-t,.side-vr em{margin:0 20px}
+.side-vr .ad{position:absolute;top:12px;left:14px;z-index:2;font-size:11px;background:rgba(0,0,0,.4);padding:3px 9px;border-radius:999px}
+.side-vr .sv-img{position:relative;height:130px;display:flex;align-items:flex-end;justify-content:center;gap:8px;padding-bottom:14px;overflow:hidden}
+.side-vr .sv-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85}
+.side-vr .sv-img i{position:relative;width:34px;height:62px;border-radius:9px;border:2px solid #fff9;background:rgba(255,255,255,.18);backdrop-filter:blur(4px);animation:svb 3s ease-in-out infinite}
+.side-vr .sv-img i:nth-of-type(2){height:72px;background:linear-gradient(160deg,#F5CDA9,#E8915A);animation-delay:.4s}.side-vr .sv-img i:nth-of-type(3){animation-delay:.8s}
+@keyframes svb{50%{transform:translateY(-6px)}}
+.side-vr b{font:400 20px/1.2 var(--serif)}.side-vr .sv-t{font-size:14px;line-height:1.45;opacity:.85}
+.side-vr em{font-style:normal;font-weight:600;background:#F5CDA9;color:#16233A;border-radius:999px;padding:10px 18px;align-self:flex-start;margin-top:4px}
