@@ -5,39 +5,39 @@
 <link rel="canonical" href="https://helphelper.pro/chat/">
 <meta property="og:title" content="Поговорить с «Опорой» — анонимный ИИ-собеседник 24/7"><meta property="og:description" content="Анонимный чат поддержки для девушек: выговорись в любое время, получи бережную поддержку и техники самопомощи. Бесплатно, без регистрации.">
 <meta property="og:type" content="website"><meta property="og:url" content="https://helphelper.pro/chat/"><meta property="og:locale" content="ru_RU">
-<meta name="theme-color" content="#b5547a">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%23b5547a'/%3E%3Ccircle cx='38' cy='40' r='14' fill='%23e8a0b4'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#6C4CF5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236C4CF5'/%3E%3Cstop offset='.5' stop-color='%23FF8DB4'/%3E%3Cstop offset='1' stop-color='%23FFD66B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='46' fill='url(%23g)'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 <script>try{var t=localStorage.getItem('opora_theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head><body>
 <header class="top"><div class="wrap">
 <a class="logo" href="/"><i></i>Опора</a>
-<button class="burger" aria-label="Меню" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
-<nav class="nav"><a href="/stati/">Статьи</a><a href="/chat/" style="color:var(--ink)">Поговорить</a><a href="/kak-vybrat-psihologa/">Найти психолога</a><a href="/o-proekte/">О проекте</a><a class="sos" href="/pomosh/">SOS</a>
-<button class="theme" title="Тема" onclick="var r=document.documentElement,d=(r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'))==='dark'?'light':'dark';r.dataset.theme=d;try{localStorage.setItem('opora_theme',d)}catch(e){}">◐</button></nav>
+<button class="burger" aria-label="Меню" aria-expanded="false" onclick="var n=document.querySelector('.nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">Меню</button>
+<nav class="nav"><a href="/stati/">Статьи</a><a href="/chat/" aria-current="page">Поговорить</a><a href="/kak-vybrat-psihologa/">Найти психолога</a><a href="/o-proekte/">О проекте</a><a class="sos" href="/pomosh/">Мне плохо</a>
+<button class="theme" aria-label="Тёмная или светлая тема" onclick="var r=document.documentElement,d=(r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'))==='dark'?'light':'dark';r.dataset.theme=d;try{localStorage.setItem('opora_theme',d)}catch(e){}">◐</button></nav>
 </div></header>
 <main><div class="wrap"><div class="chat-page">
 <div class="chat">
-<div class="head"><div class="av"></div><div><b>Опора</b><small>● на связи 24/7</small></div><button id="clear" title="Стереть переписку">Стереть</button></div>
+<div class="head"><div class="av"></div><div><b>Опора</b><small>на связи в любое время</small></div><button id="clear">Стереть переписку</button></div>
 <div class="log" id="log" aria-live="polite"></div>
 <div class="chips" id="chips"><button>Мне тревожно</button><button>Расстались, очень больно</button><button>Нет сил ни на что</button><button>Не могу уснуть</button><button>Мне одиноко</button><button>Просто хочу выговориться</button></div>
-<div class="compose"><textarea id="msg" rows="1" placeholder="Напиши, что у тебя на душе…" aria-label="Сообщение"></textarea><button class="btn" id="send">➤</button></div>
+<div class="compose"><textarea id="msg" rows="1" placeholder="Напиши, что у тебя на душе" aria-label="Сообщение"></textarea><button class="btn" id="send" aria-label="Отправить">Отправить</button></div>
 </div>
 <aside class="side">
-<div class="box"><h3>🔒 Конфиденциально</h3>Переписка хранится только на этом устройстве. Не пиши паспорт, адрес и номера карт.</div>
-<div class="box" style="background:var(--warn-soft)"><h3>🆘 Если очень плохо</h3><a href="tel:+74959895050"><b>8-495-989-50-50</b></a> — круглосуточно<br><a href="tel:112"><b>112</b></a> — если опасно<br><a href="tel:88007000600"><b>8-800-7000-600</b></a> — при насилии</div>
-<div class="box"><h3>ℹ️ Важно</h3>«Опора» — ИИ-собеседник. Она поддержит и подскажет техники, но не ставит диагнозы и не заменяет врача.</div>
-<a class="vr tall" href="https://videorils.com/?utm_source=opora&utm_medium=banner&utm_campaign=chat" target="_blank" rel="noopener sponsored"><div class="ic">✨</div><div><b>Твоя история может вдохновить других</b><span>Расскажи её в коротком видео. VideoRils превращает идею в готовый ролик с озвучкой и субтитрами — без монтажа.</span></div><div class="go">Сделать ролик →</div></a>
+<div class="box"><h3>🔒 Только на этом устройстве</h3>Переписка не сохраняется на сервере. Не пиши паспорт, адрес и номера карт.</div>
+<div class="box alert"><h3>Если очень плохо</h3><a href="tel:+74959895050"><b>8-495-989-50-50</b></a> круглосуточно<br><a href="tel:112"><b>112</b></a> если опасно<br><a href="tel:88007000600"><b>8-800-7000-600</b></a> при насилии</div>
+<div class="box"><h3>Кто отвечает</h3>«Опора» — ИИ-собеседник. Она поддержит и подскажет техники, но не ставит диагнозы и не заменяет врача.</div>
+<a class="vr tall" href="https://videorils.com/?utm_source=opora&utm_medium=banner&utm_campaign=chat" target="_blank" rel="noopener sponsored"><span class="ad">Реклама</span><div class="ic">✨</div><div><b>Твоя история может вдохновить других</b><span>Расскажи её в коротком видео. VideoRils превращает идею в готовый ролик с озвучкой и субтитрами без монтажа.</span></div><div class="go">Сделать ролик</div></a>
 </aside></div></div>
 <script>window.OPORA_API="https://opora-chat.videorils.workers.dev/chat";</script><script src="/assets/chat.js" defer></script></main>
 <footer><div class="wrap"><div class="cols">
-<div><a class="logo" href="/" style="margin-bottom:8px"><i></i>Опора</a>
-<p>Бесплатная поддержка для девушек и женщин: статьи о тревоге, отношениях, выгорании и ИИ-собеседник 24/7.</p>
-<p><b>Сайт не заменяет врача и психотерапевта.</b> Если есть угроза жизни — звони 112.</p></div>
+<div><a class="logo" href="/"><i></i>Опора</a>
+<p>Поддержка для девушек и женщин: понятные статьи и ИИ-собеседник, который рядом в любое время.</p>
+<p>Сайт не заменяет врача и психотерапевта. Если есть угроза жизни, звони 112.</p></div>
 <div><b>Темы</b><a href="/trevoga/">🌊 Тревога</a><a href="/panicheskaya-ataka/">💨 Паническая атака</a><a href="/depressiya/">🌧 Депрессия или просто плохо</a><a href="/vygoranie/">🕯 Выгорание</a><a href="/rasstavanie/">💔 Как пережить расставание и не потерять себя</a><a href="/abyuz/">🛡 Абьюз</a></div>
 <div><b>Сайт</b><a href="/chat/">Поговорить с «Опорой»</a><a href="/pomosh/">Телефоны помощи</a><a href="/stati/">Все статьи</a><a href="/o-proekte/">О проекте и конфиденциальность</a></div>
-</div><p style="margin-top:20px">© 2026 Опора</p></div></footer>
+</div><p style="margin-top:26px">© 2026 Опора</p></div></footer>
 
 </body></html>

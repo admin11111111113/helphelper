@@ -5,55 +5,55 @@
 <link rel="canonical" href="https://helphelper.pro/">
 <meta property="og:title" content="Опора — психологическая поддержка для девушек, ИИ-собеседник 24/7"><meta property="og:description" content="Бесплатная психологическая поддержка для девушек и женщин: ИИ-собеседник 24/7, статьи о тревоге, депрессии, расставании, выгорании и абьюзе, телефоны помощи.">
 <meta property="og:type" content="website"><meta property="og:url" content="https://helphelper.pro/"><meta property="og:locale" content="ru_RU">
-<meta name="theme-color" content="#b5547a">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%23b5547a'/%3E%3Ccircle cx='38' cy='40' r='14' fill='%23e8a0b4'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#6C4CF5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236C4CF5'/%3E%3Cstop offset='.5' stop-color='%23FF8DB4'/%3E%3Cstop offset='1' stop-color='%23FFD66B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='46' fill='url(%23g)'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 <script>try{var t=localStorage.getItem('opora_theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Опора", "url": "https://helphelper.pro/", "inLanguage": "ru"}</script></head><body>
 <header class="top"><div class="wrap">
 <a class="logo" href="/"><i></i>Опора</a>
-<button class="burger" aria-label="Меню" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
-<nav class="nav"><a href="/stati/">Статьи</a><a href="/chat/">Поговорить</a><a href="/kak-vybrat-psihologa/">Найти психолога</a><a href="/o-proekte/">О проекте</a><a class="sos" href="/pomosh/">SOS</a>
-<button class="theme" title="Тема" onclick="var r=document.documentElement,d=(r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'))==='dark'?'light':'dark';r.dataset.theme=d;try{localStorage.setItem('opora_theme',d)}catch(e){}">◐</button></nav>
+<button class="burger" aria-label="Меню" aria-expanded="false" onclick="var n=document.querySelector('.nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">Меню</button>
+<nav class="nav"><a href="/stati/">Статьи</a><a href="/chat/">Поговорить</a><a href="/kak-vybrat-psihologa/">Найти психолога</a><a href="/o-proekte/">О проекте</a><a class="sos" href="/pomosh/">Мне плохо</a>
+<button class="theme" aria-label="Тёмная или светлая тема" onclick="var r=document.documentElement,d=(r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'))==='dark'?'light':'dark';r.dataset.theme=d;try{localStorage.setItem('opora_theme',d)}catch(e){}">◐</button></nav>
 </div></header>
 <main>
 <section class="hero"><div class="wrap"><div>
-<div class="kicker">поддержка для девушек · бесплатно · анонимно</div>
 <h1>Тебе не обязательно справляться одной</h1>
-<p class="big">Тревога, расставание, выгорание, одиночество — здесь можно выговориться в любое время и найти понятные шаги, которые помогают. Без осуждения и без регистрации.</p>
-<div class="cta"><a class="btn" href="/chat/">💬 Поговорить сейчас</a><a class="btn ghost" href="/stati/">Читать статьи</a></div>
-<div class="trust"><span>🌙 24/7</span><span>🔒 переписка не хранится на сервере</span><span>💗 без регистрации</span></div>
+<p class="sub">Здесь можно выговориться в любое время, без регистрации и без осуждения. И найти простые шаги, от которых становится легче.</p>
+<div class="cta"><a class="btn" href="/chat/">Поговорить с «Опорой»</a><a class="btn soft" href="/stati/">Читать статьи</a></div>
 </div>
-<div class="bubble" aria-hidden="true">
-<div class="msg u">Мне так тревожно, что не могу уснуть уже третью ночь…</div>
-<div class="msg a">Звучит очень изматывающе. Давай сначала чуть замедлим тело: вдох на 4, задержка на 7, выдох на 8. А потом расскажешь, что крутится в голове?</div>
-<div class="msg u">Давай попробую</div></div>
+<button class="breathe" id="breathe" aria-label="Подышать вместе: вдох 4 секунды, задержка 7, выдох 8">
+<span class="halo"></span><span class="orb"></span>
+<span class="say" id="say">Подышим?<small>Нажми, и я поведу</small></span></button>
 </div></section>
-<div class="wrap"><div class="sosbar"><div><b>Если тебе сейчас очень плохо или опасно</b> — позвони, тебе помогут прямо сейчас:</div><div class="nums"><a class="num" href="tel:112">112</a><a class="num" href="tel:+74959895050">8-495-989-50-50</a><a class="num" href="tel:88007000600">8-800-7000-600</a></div><a href="/pomosh/">все номера →</a></div></div>
-<section><div class="wrap"><div class="kicker">о чём чаще всего пишут</div><h2>С чем мы можем помочь</h2>
-<div class="grid"><a class="card" href="/trevoga/"><div class="em">🌊</div><span class="tag">Тревога</span><h3>Тревога: что делать, когда внутри всё сжимается</h3><p>Почему возникает тревога, как отличить обычное беспокойство от тревожного расстройства и что помогает прямо сейчас — техники на 2 минуты.</p><div class="meta">5 мин чтения</div></a><a class="card" href="/depressiya/"><div class="em">🌧</div><span class="tag">Настроение</span><h3>Депрессия или просто плохо? Признаки и что делать</h3><p>Как отличить грусть и усталость от депрессии, какие признаки нельзя игнорировать и с чего начать, если сил нет совсем.</p><div class="meta">6 мин чтения</div></a><a class="card" href="/vygoranie/"><div class="em">🕯</div><span class="tag">Усталость</span><h3>Выгорание: когда работа, дом и дети высосали всё</h3><p>Признаки эмоционального выгорания у женщин, почему отпуск не всегда помогает и что реально восстанавливает силы.</p><div class="meta">5 мин чтения</div></a><a class="card" href="/rasstavanie/"><div class="em">💔</div><span class="tag">Отношения</span><h3>Как пережить расставание и не потерять себя</h3><p>Почему расставание так больно, нормальные стадии горя, что делать с желанием написать бывшему и как восстановиться.</p><div class="meta">6 мин чтения</div></a><a class="card" href="/abyuz/"><div class="em">🛡</div><span class="tag">Отношения</span><h3>Абьюз: признаки и как выйти безопасно</h3><p>Как распознать психологическое, финансовое и физическое насилие в отношениях, почему так трудно уйти и как составить план безопасности.</p><div class="meta">7 мин чтения</div></a><a class="card" href="/samoocenka/"><div class="em">🌷</div><span class="tag">Самооценка</span><h3>Самооценка и соцсети: как перестать себя сравнивать</h3><p>Почему лента в соцсетях бьёт по самооценке, как работает сравнение и упражнения, которые помогают относиться к себе бережнее.</p><div class="meta">5 мин чтения</div></a></div>
-<p style="text-align:center;margin-top:20px"><a class="btn ghost" href="/stati/">Все 14 тем →</a></p></div></section>
-<section><div class="wrap"><div class="kicker">как это работает</div><h2>Три шага, чтобы стало чуть легче</h2>
-<div class="steps">
-<div class="step"><b>1. Выговорись</b>Напиши «Опоре», что происходит. Она выслушает и поможет назвать чувства — в любое время суток.</div>
-<div class="step"><b>2. Сделай маленький шаг</b>Дыхание, заземление, разбор тревожной мысли — простые техники, которые работают уже сегодня.</div>
-<div class="step"><b>3. Найди живую помощь</b>Подскажем, к какому специалисту идти, как его проверить и где помогут бесплатно.</div>
+<section class="moods"><div class="wrap"><h2>Как ты сейчас?</h2>
+<div class="mood-row"><a class="mood" href="/chat/?q=%D0%9C%D0%BD%D0%B5%20%D1%82%D1%80%D0%B5%D0%B2%D0%BE%D0%B6%D0%BD%D0%BE"><span>😰</span>Тревожно</a><a class="mood" href="/chat/?q=%D0%9C%D0%BD%D0%B5%20%D0%B3%D1%80%D1%83%D1%81%D1%82%D0%BD%D0%BE"><span>🌧</span>Грустно</a><a class="mood" href="/chat/?q=%D0%9D%D0%B5%D1%82%20%D1%81%D0%B8%D0%BB%20%D0%BD%D0%B8%20%D0%BD%D0%B0%20%D1%87%D1%82%D0%BE"><span>🪫</span>Нет сил</a><a class="mood" href="/chat/?q=%D0%A0%D0%B0%D1%81%D1%81%D1%82%D0%B0%D0%BB%D0%B8%D1%81%D1%8C%2C%20%D0%BE%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B1%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE"><span>💔</span>Больно после расставания</a><a class="mood" href="/chat/?q=%D0%9D%D0%B5%20%D0%BC%D0%BE%D0%B3%D1%83%20%D1%83%D1%81%D0%BD%D1%83%D1%82%D1%8C"><span>🌙</span>Не могу уснуть</a><a class="mood" href="/chat/?q=%D0%9C%D0%BD%D0%B5%20%D0%BE%D0%B4%D0%B8%D0%BD%D0%BE%D0%BA%D0%BE"><span>🫥</span>Одиноко</a><a class="mood" href="/chat/?q=%D0%AF%20%D0%B7%D0%BB%D1%8E%D1%81%D1%8C%20%D0%B8%20%D0%BD%D0%B5%20%D0%B7%D0%BD%D0%B0%D1%8E%2C%20%D1%87%D1%82%D0%BE%20%D1%81%20%D1%8D%D1%82%D0%B8%D0%BC%20%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C"><span>😤</span>Злюсь</a><a class="mood" href="/chat/?q=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%20%D0%B2%D1%8B%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D1%8C%D1%81%D1%8F"><span>🗣</span>Просто выговориться</a></div></div></section>
+<div class="wrap" style="margin-top:26px"><div class="sosbar"><p>Если тебе сейчас очень плохо или опасно, позвони. Там помогут прямо сейчас.</p><div class="nums"><a class="num" href="tel:112">112</a><a class="num" href="tel:+74959895050">8-495-989-50-50</a><a class="num" href="tel:88007000600">8-800-7000-600</a></div><a class="all" href="/pomosh/">Все номера</a></div></div>
+<section class="sec"><div class="wrap"><div class="sec-head"><div><h2>О чём чаще всего пишут</h2>
+<p>Коротко и по делу: что происходит и что помогает уже сегодня.</p></div><a class="btn soft" href="/stati/">Все 14 тем</a></div>
+<div class="bento"><a class="tile big" href="/trevoga/"><div class="em">🌊</div><span class="tag">Тревога</span><h3>Тревога: что делать, когда внутри всё сжимается</h3><p>Почему возникает тревога, как отличить обычное беспокойство от тревожного расстройства и что помогает прямо сейчас — техники на 2 минуты.</p><div class="min">5 мин чтения</div></a><a class="tile mint" href="/depressiya/"><div class="em">🌧</div><span class="tag">Настроение</span><h3>Депрессия или просто плохо? Признаки и что делать</h3><div class="min">6 мин чтения</div></a><a class="tile " href="/rasstavanie/"><div class="em">💔</div><span class="tag">Отношения</span><h3>Как пережить расставание и не потерять себя</h3><div class="min">6 мин чтения</div></a><a class="tile sun" href="/vygoranie/"><div class="em">🕯</div><span class="tag">Усталость</span><h3>Выгорание: когда работа, дом и дети высосали всё</h3><div class="min">5 мин чтения</div></a><a class="tile " href="/abyuz/"><div class="em">🛡</div><span class="tag">Отношения</span><h3>Абьюз: признаки и как выйти безопасно</h3><div class="min">7 мин чтения</div></a><a class="tile wide" href="/samoocenka/"><div class="em">🌷</div><span class="tag">Самооценка</span><h3>Самооценка и соцсети: как перестать себя сравнивать</h3><p>Почему лента в соцсетях бьёт по самооценке, как работает сравнение и упражнения, которые помогают относиться к себе бережнее.</p><div class="min">5 мин чтения</div></a><a class="tile " href="/odinochestvo/"><div class="em">🌙</div><span class="tag">Одиночество</span><h3>Одиночество: после переезда, развода или просто так</h3><div class="min">5 мин чтения</div></a><a class="tile mint" href="/bessonnica/"><div class="em">🌌</div><span class="tag">Сон</span><h3>Бессонница и мысли по кругу ночью</h3><div class="min">4 мин чтения</div></a></div></div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>Как «Опора» помогает</h2></div>
+<div class="path">
+<div><b>Выговориться</b><p>Напиши, что происходит. «Опора» выслушает и поможет назвать чувства в любое время суток.</p></div>
+<div><b>Сделать маленький шаг</b><p>Дыхание, заземление, разбор тревожной мысли — простые техники, которые работают сразу.</p></div>
+<div><b>Найти живую помощь</b><p>Подскажем, к какому специалисту идти, как его проверить и где помогут бесплатно.</p></div>
 </div></div></section>
-<div class="wrap"><a class="vr" href="https://videorils.com/?utm_source=opora&utm_medium=banner&utm_campaign=home" target="_blank" rel="noopener sponsored"><div class="ic">🎬</div><div><b>Хочешь вести свой блог, но нет сил на монтаж?</b><span>VideoRils сам сделает ролик для Reels, TikTok и Shorts: сценарий, озвучка, субтитры — за пару минут прямо в телефоне.</span></div><div class="go">Попробовать →</div></a></div>
-<section><div class="narrow faq"><div class="kicker">вопросы</div><h2>Частые вопросы</h2>
-<details><summary>Это правда бесплатно?</summary><p>Да. Статьи и чат с «Опорой» бесплатны. Сайт существует на рекламу — она помечена словом «Реклама».</p></details>
-<details><summary>Кто мне отвечает в чате?</summary><p>Искусственный интеллект, обученный бережно поддерживать и подсказывать техники самопомощи. Это не врач и не психотерапевт — если нужно, «Опора» подскажет, к кому обратиться.</p></details>
-<details><summary>Кто-то увидит мою переписку?</summary><p>Переписка хранится только в твоём браузере и не сохраняется на нашем сервере. Её можно стереть одной кнопкой. Сообщения передаются ИИ-сервису для ответа — поэтому не пиши паспортные данные, адрес и номера карт.</p></details>
-<details><summary>Мне очень плохо прямо сейчас. Что делать?</summary><p>Позвони 8-495-989-50-50 (экстренная психологическая помощь, круглосуточно) или 112. Если есть насилие — 8-800-7000-600. <a href="/pomosh/">Все номера</a>.</p></details>
-</div></section></main>
+<div class="wrap"><a class="vr" href="https://videorils.com/?utm_source=opora&utm_medium=banner&utm_campaign=home" target="_blank" rel="noopener sponsored"><span class="ad">Реклама</span><div class="ic">🎬</div><div><b>Хочешь вести свой блог, но нет сил на монтаж?</b><span>VideoRils сам сделает ролик для Reels, TikTok и Shorts: сценарий, озвучка, субтитры — за пару минут прямо в телефоне.</span></div><div class="go">Попробовать</div></a></div>
+<section class="sec"><div class="narrow faq"><h2 style="margin-bottom:18px">Частые вопросы</h2>
+<details><summary>Это правда бесплатно?</summary><p>Да. Статьи и разговор с «Опорой» бесплатны и без регистрации.</p></details>
+<details><summary>Кто мне отвечает?</summary><p>Искусственный интеллект, который бережно поддерживает и подсказывает техники самопомощи. Это не врач и не психотерапевт. Если нужно, «Опора» подскажет, к кому обратиться.</p></details>
+<details><summary>Кто-то увидит мою переписку?</summary><p>Переписка хранится только в твоём браузере и не сохраняется на нашем сервере, её можно стереть одной кнопкой. Сообщения передаются ИИ-сервису для ответа, поэтому не пиши паспортные данные, адрес и номера карт.</p></details>
+<details><summary>Мне очень плохо прямо сейчас. Что делать?</summary><p>Позвони 8-495-989-50-50 (экстренная психологическая помощь, круглосуточно) или 112. Если есть насилие — 8-800-7000-600. <a href="/pomosh/">Все номера</a></p></details>
+</div></section>
+<script src="/assets/breathe.js" defer></script></main>
 <footer><div class="wrap"><div class="cols">
-<div><a class="logo" href="/" style="margin-bottom:8px"><i></i>Опора</a>
-<p>Бесплатная поддержка для девушек и женщин: статьи о тревоге, отношениях, выгорании и ИИ-собеседник 24/7.</p>
-<p><b>Сайт не заменяет врача и психотерапевта.</b> Если есть угроза жизни — звони 112.</p></div>
+<div><a class="logo" href="/"><i></i>Опора</a>
+<p>Поддержка для девушек и женщин: понятные статьи и ИИ-собеседник, который рядом в любое время.</p>
+<p>Сайт не заменяет врача и психотерапевта. Если есть угроза жизни, звони 112.</p></div>
 <div><b>Темы</b><a href="/trevoga/">🌊 Тревога</a><a href="/panicheskaya-ataka/">💨 Паническая атака</a><a href="/depressiya/">🌧 Депрессия или просто плохо</a><a href="/vygoranie/">🕯 Выгорание</a><a href="/rasstavanie/">💔 Как пережить расставание и не потерять себя</a><a href="/abyuz/">🛡 Абьюз</a></div>
 <div><b>Сайт</b><a href="/chat/">Поговорить с «Опорой»</a><a href="/pomosh/">Телефоны помощи</a><a href="/stati/">Все статьи</a><a href="/o-proekte/">О проекте и конфиденциальность</a></div>
-</div><p style="margin-top:20px">© 2026 Опора</p></div></footer>
-<a class="fab" href="/chat/">💬 Поговорить</a>
+</div><p style="margin-top:26px">© 2026 Опора</p></div></footer>
+<a class="fab" href="/chat/"><i></i>Поговорить</a>
 </body></html>
