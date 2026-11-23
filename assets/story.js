@@ -67,3 +67,17 @@
   var n = r.children.length; if (n < 2) return; var keep = Math.floor(Math.random() * n);
   for (var j = n - 1; j >= 0; j--) if (j !== keep) r.removeChild(r.children[j]);
 });
+// боковая реклама: пул вариантов, сначала туры, потом VideoRils; набор меняется по мере прокрутки
+(function () {
+  var tpl = document.getElementById('oppool'); if (!tpl) return;
+  var by = { tr: [], vr: [] };
+  [].slice.call(tpl.content.children).sort(function () { return Math.random() - .5; }).forEach(function (n) { by[n.dataset.b].push(n); });
+  var gs = [].slice.call(document.querySelectorAll('.side-vr .og'));
+  gs.forEach(function (g, k) { ['tr', 'vr'].forEach(function (b) { var n = by[b][k]; if (n) g.appendChild(n.cloneNode(true)); }); });
+  var cur = 0;
+  function upd() {
+    var max = document.documentElement.scrollHeight - innerHeight, p = max > 0 ? scrollY / max : 0, g = Math.min(gs.length - 1, Math.floor(p * gs.length * .999));
+    if (g !== cur) { cur = g; gs.forEach(function (x, k) { x.classList.toggle('on', k === g); }); }
+  }
+  addEventListener('scroll', upd, { passive: true });
+})();
