@@ -67,17 +67,39 @@
   var n = r.children.length; if (n < 2) return; var keep = Math.floor(Math.random() * n);
   for (var j = n - 1; j >= 0; j--) if (j !== keep) r.removeChild(r.children[j]);
 });
-// боковая реклама: пул вариантов, сначала туры, потом VideoRils; набор меняется по мере прокрутки
+// боковая реклама: пул вариантов; на широком экране — колонка справа на всю длину (листается вместе с сайтом),
+// на узком — карточки между блоками
 (function () {
   var tpl = document.getElementById('oppool'); if (!tpl) return;
-  var by = { tr: [], vr: [], en: [], sr: [] }, plan = [['tr', 'sr'], ['en', 'vr'], ['tr', 'sr']], used = { tr: 0, vr: 0, en: 0, sr: 0 };
+  var side = tpl.parentNode;
+  var by = { tr: [], vr: [], en: [], sr: [] };
   [].slice.call(tpl.content.children).sort(function () { return Math.random() - .5; }).forEach(function (n) { by[n.dataset.b].push(n); });
-  var gs = [].slice.call(document.querySelectorAll('.side-vr .og'));
-  gs.forEach(function (g, k) { (plan[k] || []).forEach(function (b) { var n = by[b][used[b]++]; if (n) g.appendChild(n.cloneNode(true)); }); });
-  var cur = 0;
-  function upd() {
-    var max = document.documentElement.scrollHeight - innerHeight, p = max > 0 ? scrollY / max : 0, g = Math.min(gs.length - 1, Math.floor(p * gs.length * .999));
-    if (g !== cur) { cur = g; gs.forEach(function (x, k) { x.classList.toggle('on', k === g); }); }
+  var order = ['tr', 'en', 'vr', 'sr', 'tr', 'vr', 'en', 'sr', 'tr'], cards = [];
+  order.forEach(function (b) { var n = by[b].shift(); if (n) cards.push(n.cloneNode(true)); });
+  [].forEach.call(side.querySelectorAll('.og'), function (g) { g.remove(); });
+  var wide = matchMedia('(min-width:1200px)');
+  if (wide.matches) {
+    cards.forEach(function (c) { side.appendChild(c); });
+    side.classList.add('col');
+    var main = document.querySelector('main'), foot = document.querySelector('footer');
+    function place() {
+      var first = main.firstElementChild, top = side.classList.contains('home') && first ? first.offsetTop + first.offsetHeight + 40 : main.offsetTop + 110;
+      var h = Math.max(600, foot.offsetTop - top - 60), n = Math.max(2, Math.min(cards.length, Math.floor(h / 520)));
+      cards.forEach(function (c, k) { c.style.display = k < n ? '' : 'none'; });
+      side.style.top = top + 'px'; side.style.height = h + 'px';
+    }
+    place(); addEventListener('load', place); addEventListener('resize', place);
+    document.body.classList.add('with-col');
+  } else {
+    var main2 = document.querySelector('main');
+    var spots = [].slice.call(main2.querySelectorAll('h2')).slice(1), tag = 'div';
+    if (spots.length < 2) { spots = [].slice.call(main2.querySelectorAll('li')).filter(function (x, j) { return j && j % 4 === 0; }); tag = 'li'; }
+    var step = Math.max(1, Math.ceil(spots.length / 4)), k = 0;
+    for (var i = 0; i < spots.length && k < 4; i += step) {
+      var box = document.createElement(tag); box.className = 'side-vr inl'; box.style.listStyle = 'none'; box.appendChild(cards[k++]);
+      var h2 = spots[i], anchor = h2.closest('section') && h2.closest('section').parentNode === main2 ? h2.closest('section') : h2;
+      anchor.parentNode.insertBefore(box, anchor);
+    }
+    side.remove();
   }
-  addEventListener('scroll', upd, { passive: true });
 })();
