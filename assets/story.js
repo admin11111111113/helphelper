@@ -72,9 +72,11 @@
 (function () {
   var tpl = document.getElementById('oppool'); if (!tpl) return;
   var side = tpl.parentNode;
-  var by = { tr: [], vr: [], en: [], sr: [] };
+  var by = { tr: [], vr: [], en: [], sr: [], wa: [] };
   [].slice.call(tpl.content.children).sort(function () { return Math.random() - .5; }).forEach(function (n) { by[n.dataset.b].push(n); });
-  var order = ['tr', 'en', 'vr', 'sr', 'tr', 'vr', 'en', 'sr', 'tr'], cards = [];
+  // Workadult (18+) не показываем на «Мне плохо» и в чате
+  if (/^\/(pomosh|chat)\//.test(location.pathname)) by.wa = [];
+  var order = ['tr', 'wa', 'en', 'vr', 'sr', 'wa', 'tr', 'vr', 'en', 'sr', 'wa', 'tr'], cards = [];
   order.forEach(function (b) { var n = by[b].shift(); if (n) cards.push(n.cloneNode(true)); });
   [].forEach.call(side.querySelectorAll('.og'), function (g) { g.remove(); });
   var wide = matchMedia('(min-width:1200px)');
@@ -84,7 +86,7 @@
     var main = document.querySelector('main'), foot = document.querySelector('footer');
     function place() {
       var first = main.firstElementChild, top = side.classList.contains('home') && first ? first.offsetTop + first.offsetHeight + 40 : main.offsetTop + 110;
-      var h = Math.max(600, foot.offsetTop - top - 60), n = Math.max(2, Math.min(cards.length, Math.floor(h / 520)));
+      var h = Math.max(1350, foot.offsetTop - top - 60), n = Math.max(3, Math.min(cards.length, Math.floor(h / 450)));
       cards.forEach(function (c, k) { c.style.display = k < n ? '' : 'none'; });
       side.style.top = top + 'px'; side.style.height = h + 'px';
     }

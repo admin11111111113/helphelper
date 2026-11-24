@@ -394,3 +394,12 @@ body.story:not(.scrolled) .fab{opacity:0;transform:translateY(20px);pointer-even
 }
 .side-vr.inl{display:block!important;position:static!important;width:auto;max-width:380px;margin:34px auto;padding:0 16px;opacity:1!important;transform:none!important;pointer-events:auto!important}
 @media (min-width:1200px){body.with-col .fab{right:300px!important}}
+/* лента статей не заезжает под колонку рекламы */
+@media (min-width:1200px){body.with-col .strip{margin-right:300px;padding-left:max(24px,calc((100vw - 300px - 1240px)/2 + 24px));scroll-padding-left:max(24px,calc((100vw - 300px - 1240px)/2 + 24px))}}
+
+/* Workadult в колонке */
+.side-vr .sv-wa{background:linear-gradient(160deg,#5b1a4a,#e0457b)!important;color:#fff}
+.side-vr .sv-wa.w2{background:linear-gradient(160deg,#3a1460,#b0428f)!important}
+.side-vr .sv-wa.w3{background:linear-gradient(160deg,#7a1e55,#ff6f8f)!important}
+.side-vr .sv-wa b,.side-vr .sv-wa .sv-t{color:#fff!important}
+.side-vr .sv-wa em{background:#fff!important;color:#7a1e55!important}
