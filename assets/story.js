@@ -19,7 +19,7 @@
       if (r.top <= mid) { i = k; f = r.height ? Math.min(1, Math.max(0, (mid - r.top) / r.height)) : 0; }
     }
     var a = cols[i], b = cols[Math.min(i + 1, cols.length - 1)];
-    var t = Math.min(1, Math.max(0, (f - 0.55) / 0.45)); t = t * t * (3 - 2 * t);
+    var t = Math.min(1, Math.max(0, (f - 0.15) / 0.85)); t = t * t * (3 - 2 * t);
     var c = a.map(function (v, j) { return Math.round(v + (b[j] - v) * t); });
     var L = lum(c);
     var key = c.join(','); if (key === sky.last) return; sky.last = key;
@@ -40,7 +40,7 @@
   if ('IntersectionObserver' in window && !still) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -12% 0px' });
+    }, { rootMargin: '0px 0px 15% 0px' });
     rv.forEach(function (el) { io.observe(el); });
   } else rv.forEach(function (el) { el.classList.add('in'); });
 
@@ -79,8 +79,7 @@
   var order = ['tr', 'wa', 'en', 'vr', 'sr', 'wa', 'tr', 'vr', 'en', 'sr', 'wa', 'tr'], cards = [];
   order.forEach(function (b) { var n = by[b].shift(); if (n) cards.push(n.cloneNode(true)); });
   [].forEach.call(side.querySelectorAll('.og'), function (g) { g.remove(); });
-  var wide = matchMedia('(min-width:1200px)');
-  if (wide.matches) {
+  inline(); {
     cards.forEach(function (c) { side.appendChild(c); });
     side.classList.add('col');
     var main = document.querySelector('main'), foot = document.querySelector('footer');
@@ -92,16 +91,16 @@
     }
     place(); addEventListener('load', place); addEventListener('resize', place);
     document.body.classList.add('with-col');
-  } else {
+  }
+  function inline() {
     var main2 = document.querySelector('main');
     var spots = [].slice.call(main2.querySelectorAll('h2')).slice(1), tag = 'div';
     if (spots.length < 2) { spots = [].slice.call(main2.querySelectorAll('li')).filter(function (x, j) { return j && j % 4 === 0; }); tag = 'li'; }
     var step = Math.max(1, Math.ceil(spots.length / 4)), k = 0;
     for (var i = 0; i < spots.length && k < 4; i += step) {
-      var box = document.createElement(tag); box.className = 'side-vr inl'; box.style.listStyle = 'none'; box.appendChild(cards[k++]);
+      var box = document.createElement(tag); box.className = 'side-vr inl'; box.style.listStyle = 'none'; box.appendChild(cards[k++].cloneNode(true));
       var h2 = spots[i], anchor = h2.closest('section') && h2.closest('section').parentNode === main2 ? h2.closest('section') : h2;
       anchor.parentNode.insertBefore(box, anchor);
     }
-    side.remove();
   }
 })();
