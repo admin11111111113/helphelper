@@ -530,3 +530,20 @@ body.story:not(.scrolled) .fab{opacity:0;transform:translateY(20px);pointer-even
  .side-vr.fix .sv-t{opacity:.95!important}
 }
 @media (min-width:701px){.related .row{grid-template-columns:120px 1fr 96px;gap:12px 24px}}
+/* 26.11 (6): прямоугольные баннеры — фото сверху, текст под ним (не на фото), уже и компактнее */
+@media (min-width:1200px){
+ .side-vr.col.fix{width:200px!important;right:12px!important;gap:10px!important}
+ body.with-col main,body.with-col footer{margin-right:225px}
+ body.with-col .fab{right:225px!important}
+ .side-vr.fix>a,.side-vr.fix .sv-en{padding:0 0 10px!important;gap:5px!important;border-radius:8px!important;box-shadow:0 4px 14px rgba(13,27,51,.18)!important}
+ .side-vr.fix .sv-img{position:relative!important;inset:auto;height:84px!important;min-height:84px!important;flex:none!important;margin:0 0 3px!important}
+ .side-vr.fix .sv-img::after{content:none}
+ .side-vr.fix b,.side-vr.fix .sv-t,.side-vr.fix .erid{text-shadow:none}
+ .side-vr.fix b,.side-vr.fix .sv-t,.side-vr.fix em,.side-vr.fix .erid,
+ .side-vr.fix .sv-en b,.side-vr.fix .sv-en .sv-t,.side-vr.fix .sv-en em,.side-vr.fix .sv-en .erid{margin-left:10px!important;margin-right:10px!important}
+ .side-vr.fix b{font-size:13.5px!important;line-height:1.2!important}
+ .side-vr.fix .sv-t{font-size:11.5px!important;line-height:1.38!important;display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+ .side-vr.fix em{border-radius:6px!important;padding:4px 10px!important;font-size:11.5px!important}
+ .side-vr.fix .erid{font-size:8px!important}
+ .side-vr.fix .ad{top:5px!important;left:6px!important;border-radius:4px!important;font-size:9px!important;padding:1px 5px!important}
+}
