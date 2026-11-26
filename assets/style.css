@@ -512,3 +512,21 @@ body.story:not(.scrolled) .fab{opacity:0;transform:translateY(20px);pointer-even
  body.with-col .strip{margin-right:240px!important}
 }
 @media (min-width:1200px){.side-vr.fix .sv-en b,.side-vr.fix .sv-en .sv-t,.side-vr.fix .sv-en em,.side-vr.fix .sv-en .erid{margin-left:12px!important;margin-right:12px!important}}
+/* 26.11 (5): сайт целиком уже справа на ширину колонки (главная: фото-блоки не уходят под рекламу) */
+@media (min-width:1200px){
+ body.with-col main,body.with-col footer{margin-right:250px}
+ body.with-col main .wrap,body.with-col footer .wrap{max-width:min(1240px,calc(100% - 48px))!important;margin-left:auto!important;margin-right:auto!important}
+ body.with-col main .narrow{margin-left:auto!important;margin-right:auto!important}
+ body.with-col .strip{margin-right:0!important;padding-left:24px!important;scroll-padding-left:24px!important}
+}
+/* текст рекламы прямо на картинке — карточка меньше */
+@media (min-width:1200px){
+ .side-vr.fix>a,.side-vr.fix .sv-en{position:relative;padding:30px 0 12px!important;gap:5px!important;overflow:hidden;background-color:#1d2236}
+ .side-vr.fix .sv-img{position:absolute!important;inset:0;height:auto!important;min-height:0!important;margin:0!important;z-index:0}
+ .side-vr.fix .sv-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,30,.25) 0%,rgba(10,14,30,.62) 38%,rgba(10,14,30,.86) 100%)}
+ .side-vr.fix>a>*:not(.sv-img):not(.ad){position:relative;z-index:1}
+ .side-vr.fix .ad{z-index:2}
+ .side-vr.fix b,.side-vr.fix .sv-t,.side-vr.fix .erid{color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+ .side-vr.fix .sv-t{opacity:.95!important}
+}
+@media (min-width:701px){.related .row{grid-template-columns:120px 1fr 96px;gap:12px 24px}}
