@@ -197,22 +197,60 @@
   "author": "GdML",
   "license": "CC BY-SA 4.0"
  },
- "wa-ad1": {
-  "title": "File:Anse Source d'Argent 2-La Digue.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Anse_Source_d%27Argent_2-La_Digue.jpg",
-  "author": "Tobias Alt, Tobi 87",
+ "en-ad": {
+  "title": "File:Tower Bridge from the Shard London Bridge. Evening 2019-09-22.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tower_Bridge_from_the_Shard_London_Bridge._Evening_2019-09-22.jpg",
+  "author": "Colin",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "query": "Tower Bridge London sunset"
+ },
+ "en-ad2": {
+  "title": "File:Big Ben at sunrise, 2016.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Big_Ben_at_sunrise,_2016.jpg",
+  "author": "Bjørn Erik Pedersen",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "query": "Westminster Bridge Big Ben"
+ },
+ "sr-ad": {
+  "title": "File:13-11-02-olb-by-RalfR-03.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:13-11-02-olb-by-RalfR-03.jpg",
+  "author": "Ralf Roletschek",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "query": "library bookshelves interior"
+ },
+ "sr-ad2": {
+  "title": "File:Suzzallo Reading Room University of Washington restoration Seattle Washington 2026.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Suzzallo_Reading_Room_University_of_Washington_restoration_Seattle_Washington_2026.jpg",
+  "author": "Guywelch2000",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "query": "library reading room"
+ },
+ "pv-ad1": {
+  "title": "File:Batumi Boulevard Magnolia.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Batumi_Boulevard_Magnolia.jpg",
+  "author": "Sosotedrd",
   "license": "CC BY-SA 4.0"
  },
- "wa-ad2": {
-  "title": "File:Nusa Dua Bali.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Nusa_Dua_Bali.jpg",
-  "author": "GdML",
+ "pv-ad2": {
+  "title": "File:Kemer beach, Antalya.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Kemer_beach,_Antalya.jpg",
+  "author": "Crymaker",
+  "license": "CC BY-SA 2.5"
+ },
+ "pv-ad3": {
+  "title": "File:Unawatuna beach sri lanka.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Unawatuna_beach_sri_lanka.jpg",
+  "author": "Ruchira159",
   "license": "CC BY-SA 4.0"
  },
- "wa-ad3": {
-  "title": "File:Diamonds Thudufushi Beach and Water Villas, May 2017 -03.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Diamonds_Thudufushi_Beach_and_Water_Villas,_May_2017_-03.jpg",
-  "author": "Martin Falbisoner",
+ "pv-ad4": {
+  "title": "File:Dubai Marina Skyline 93.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Dubai_Marina_Skyline_93.jpg",
+  "author": "Khanshahab06",
   "license": "CC BY-SA 4.0"
  }
 }

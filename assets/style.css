@@ -495,3 +495,20 @@ body.story:not(.scrolled) .fab{opacity:0;transform:translateY(20px);pointer-even
  .side-vr.fix .ad{top:8px!important;font-size:10px!important;padding:2px 7px!important}
 }
 @media (min-width:1200px){.side-vr.fix>a,.side-vr.fix .sv-en{padding-top:32px!important}.side-vr.fix .sv-t{font-size:13px!important;line-height:1.45!important}}
+/* 26.11 (4): картинки обратно + колонка уже (220px), контент сайта шире */
+@media (min-width:1200px){
+ .side-vr.col.fix{width:220px!important;right:14px!important}
+ .side-vr.fix>a,.side-vr.fix .sv-en{padding:0 0 12px!important;gap:6px!important;display:flex!important;flex-direction:column}
+ .side-vr.fix .sv-img{display:block!important;position:relative;height:92px!important;min-height:92px!important;flex:none!important;padding:0!important;margin:0 0 2px!important}
+ .side-vr.fix .sv-img img{opacity:1!important}
+ .side-vr.fix b,.side-vr.fix .sv-t,.side-vr.fix em,.side-vr.fix .erid{margin-left:12px!important;margin-right:12px!important}
+ .side-vr.fix b{font-size:14.5px!important}
+ .side-vr.fix .sv-t{font-size:12px!important;line-height:1.42!important}
+ .side-vr.fix em{align-self:flex-start;font-size:12px!important}
+ .side-vr.fix .ad{top:7px!important;left:9px!important}
+ body.with-col main .wrap,body.with-col footer .wrap{max-width:min(1240px,calc(100vw - 280px))!important;margin-left:max(24px,calc((100vw - 240px - 1240px)/2))!important}
+ body.with-col main .narrow{margin-left:max(24px,calc((100vw - 240px - 720px)/2))!important}
+ body.with-col .fab{right:250px!important}
+ body.with-col .strip{margin-right:240px!important}
+}
+@media (min-width:1200px){.side-vr.fix .sv-en b,.side-vr.fix .sv-en .sv-t,.side-vr.fix .sv-en em,.side-vr.fix .sv-en .erid{margin-left:12px!important;margin-right:12px!important}}
