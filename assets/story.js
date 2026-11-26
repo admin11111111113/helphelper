@@ -81,10 +81,26 @@
   [].forEach.call(side.querySelectorAll('.og'), function (g) { g.remove(); });
   inline(); {
     // колонка справа закреплена (position:fixed) и показывает ВСЕ рекламодатели — по одной карточке каждого, сжатые под высоту экрана
-    var seen = {}, col = [];
-    ['tr', 'pv', 'wa', 'en', 'sr', 'vr'].forEach(function (b) { cards.forEach(function (c) { if (c.dataset.b === b && !seen[b]) { seen[b] = 1; col.push(c); } }); });
+    // Workadult — два разных объявления (верх и середина колонки), остальные по одному
+    var used = [], col = [];
+    ['wa', 'tr', 'pv', 'en', 'wa', 'sr', 'vr'].forEach(function (b) { for (var k = 0; k < cards.length; k++) { var c = cards[k]; if (c.dataset.b === b && used.indexOf(c) < 0) { used.push(c); col.push(c); break; } } });
     col.forEach(function (c) { side.appendChild(c); });
     side.classList.add('col', 'fix');
+    // если карточки не влезают по высоте — колонка медленно листается вниз-вверх; при наведении стоит
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) (function () {
+      var hold = false, dir = 1, wait = 160, y = 0;
+      side.addEventListener('mouseenter', function () { hold = true; });
+      side.addEventListener('mouseleave', function () { hold = false; y = side.scrollTop; });
+      side.addEventListener('wheel', function () { y = side.scrollTop; }, { passive: true });
+      (function tick() {
+        var max = side.scrollHeight - side.clientHeight;
+        if (max > 4 && !hold && !document.hidden && getComputedStyle(side).position === 'fixed') {
+          if (wait > 0) wait--;
+          else { y += dir * 0.35; if (y >= max) { y = max; dir = -1; wait = 180; } else if (y <= 0) { y = 0; dir = 1; wait = 180; } side.scrollTop = y; }
+        }
+        requestAnimationFrame(tick);
+      })();
+    })();
     document.body.classList.add('with-col');
   }
   function inline() {
