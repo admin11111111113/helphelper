@@ -82,9 +82,13 @@
   inline(); {
     // колонка справа закреплена (position:fixed) и показывает ВСЕ рекламодатели — по одной карточке каждого, сжатые под высоту экрана
     // Workadult — два разных объявления (верх и середина колонки), остальные по одному
-    var used = [], col = [];
-    ['wa', 'tr', 'pv', 'en', 'wa', 'sr', 'vr'].forEach(function (b) { for (var k = 0; k < cards.length; k++) { var c = cards[k]; if (c.dataset.b === b && used.indexOf(c) < 0) { used.push(c); col.push(c); break; } } });
-    col.forEach(function (c) { side.appendChild(c); });
+    var noWa = /^\/(pomosh|chat)\//.test(location.pathname), slots = [];
+    ['wa', 'tr', 'pv', 'en', 'sr', 'vr'].forEach(function (b) {
+      if (b === 'wa' && noWa) return;
+      var vs = [].filter.call(tpl.content.children, function (n) { return n.dataset.b === b; }).map(function (n) { return n.cloneNode(true); });
+      if (vs.length) { var s = adSlot(vs); side.appendChild(s); slots.push(s); }
+    });
+    adRotate(slots);
     side.classList.add('col', 'fix');
     // если карточки не влезают по высоте — колонка медленно листается вниз-вверх; при наведении стоит
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) (function () {
@@ -115,3 +119,19 @@
     }
   }
 })();
+
+// 26.11: в каждом месте колонки — один рекламодатель, его объявления сменяют друг друга (другая картинка и другой смысл)
+function adRotate(slots) {
+  slots.forEach(function (s, i) {
+    var v = [].slice.call(s.children); if (!v.length) return; var k = 0, over = false;
+    v[0].classList.add('on'); if (v.length < 2) return;
+    s.addEventListener('mouseenter', function () { over = true; }); s.addEventListener('mouseleave', function () { over = false; });
+    setTimeout(function () {
+      setInterval(function () { if (over || document.hidden) return; v[k].classList.remove('on'); k = (k + 1) % v.length; v[k].classList.add('on'); }, 7000);
+    }, i * 1100);
+  });
+}
+function adSlot(cards) {
+  var s = document.createElement('div'); s.className = 'adrot';
+  cards.sort(function () { return Math.random() - .5; }).forEach(function (c) { s.appendChild(c); }); return s;
+}
