@@ -72,24 +72,19 @@
 (function () {
   var tpl = document.getElementById('oppool'); if (!tpl) return;
   var side = tpl.parentNode;
-  var by = { tr: [], vr: [], en: [], sr: [], wa: [] };
+  var by = { tr: [], vr: [], en: [], sr: [], wa: [], pv: [] };
   [].slice.call(tpl.content.children).sort(function () { return Math.random() - .5; }).forEach(function (n) { by[n.dataset.b].push(n); });
   // Workadult (18+) не показываем на «Мне плохо» и в чате
   if (/^\/(pomosh|chat)\//.test(location.pathname)) by.wa = [];
-  var order = ['tr', 'wa', 'en', 'vr', 'sr', 'wa', 'tr', 'vr', 'en', 'sr', 'wa', 'tr'], cards = [];
+  var order = ['tr', 'wa', 'pv', 'en', 'vr', 'sr', 'wa', 'tr', 'pv', 'vr', 'en', 'sr', 'wa', 'tr'], cards = [];
   order.forEach(function (b) { var n = by[b].shift(); if (n) cards.push(n.cloneNode(true)); });
   [].forEach.call(side.querySelectorAll('.og'), function (g) { g.remove(); });
   inline(); {
-    cards.forEach(function (c) { side.appendChild(c); });
-    side.classList.add('col');
-    var main = document.querySelector('main'), foot = document.querySelector('footer');
-    function place() {
-      var first = main.firstElementChild, top = side.classList.contains('home') && first ? first.offsetTop + first.offsetHeight + 40 : main.offsetTop + 110;
-      var h = Math.max(1350, foot.offsetTop - top - 60), n = Math.max(3, Math.min(cards.length, Math.floor(h / 450)));
-      cards.forEach(function (c, k) { c.style.display = k < n ? '' : 'none'; });
-      side.style.top = top + 'px'; side.style.height = h + 'px';
-    }
-    place(); addEventListener('load', place); addEventListener('resize', place);
+    // колонка справа закреплена (position:fixed) и показывает ВСЕ рекламодатели — по одной карточке каждого, сжатые под высоту экрана
+    var seen = {}, col = [];
+    ['tr', 'pv', 'wa', 'en', 'sr', 'vr'].forEach(function (b) { cards.forEach(function (c) { if (c.dataset.b === b && !seen[b]) { seen[b] = 1; col.push(c); } }); });
+    col.forEach(function (c) { side.appendChild(c); });
+    side.classList.add('col', 'fix');
     document.body.classList.add('with-col');
   }
   function inline() {

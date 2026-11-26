@@ -427,3 +427,43 @@ body.story:not(.scrolled) .fab{opacity:0;transform:translateY(20px);pointer-even
 /* 24.11: реклама переключается по ширине без перезагрузки */
 @media (min-width:1200px){.side-vr.inl{display:none!important}}
 @media (max-width:1199px){.side-vr.col{display:none!important}}
+
+/* наш putevkavray.pro — тёплый «закатный песок», отличается от бирюзы Level.Travel */
+.side-vr .sv-pv{background:linear-gradient(165deg,#3b2a5a,#a4507a 55%,#f2a65a)!important;color:#fff}
+.side-vr .sv-pv em{background:#fff3d6;color:#5a2d4a}
+
+/* 26.11: колонка рекламы закреплена справа, все рекламодатели влезают в высоту экрана */
+@media (min-width:1200px){
+ .side-vr.col.fix{position:fixed!important;top:84px!important;bottom:14px;height:auto!important;justify-content:flex-start;gap:10px;transition:opacity .3s}
+ body.foot .side-vr.col.fix{opacity:0!important;pointer-events:none!important}
+ .side-vr.fix>a{flex:1 1 0;min-height:0;gap:4px;padding-bottom:10px;border-radius:18px;box-shadow:0 10px 24px rgba(13,27,51,.25)}
+ .side-vr.fix>a:hover{transform:none;filter:brightness(1.08)}
+ .side-vr.fix .sv-img{flex:1 1 0;min-height:0;height:auto!important;padding:0}
+ .side-vr.fix .sv-img i{display:none}
+ .side-vr.fix b{font-size:15px!important;line-height:1.2;margin:0 14px!important}
+ .side-vr.fix .sv-t{display:none!important}
+ .side-vr.fix em{margin:2px 14px 0!important;padding:5px 12px!important;font-size:12.5px!important}
+ .side-vr.fix .erid{margin:2px 14px 0;font-size:8.5px;line-height:1.15}
+ .side-vr.fix .sv-en{display:flex;flex-direction:column;justify-content:flex-end;padding:26px 14px 10px!important}
+ .side-vr.fix .sv-en b,.side-vr.fix .sv-en em,.side-vr.fix .sv-en .erid{margin-left:0!important;margin-right:0!important}
+ .side-vr.fix .sv-en em{align-self:flex-start}
+ .side-vr.fix .ad{top:7px;left:10px;font-size:10px;padding:2px 7px}
+}
+@media (min-width:1200px){
+ .side-vr.fix .sv-img{min-height:44px}
+ .side-vr.fix>a>*:not(.sv-img):not(.ad){flex:none}
+ .side-vr.fix .sv-en{justify-content:center;padding:30px 14px 10px!important}
+ .side-vr.fix .sv-en .sv-t{margin:0!important}
+}
+@media (min-width:1200px) and (min-height:1250px){.side-vr.fix .sv-t{display:block!important;font-size:12.5px;margin:0 14px!important;line-height:1.35}}
+/* низкие экраны (ноутбуки): без картинок, компактнее — все 6 карточек влезают */
+@media (min-width:1200px) and (max-height:900px){
+ .side-vr.col.fix{gap:7px;top:80px!important;bottom:10px}
+ .side-vr.fix .sv-img{display:none!important}
+ .side-vr.fix>a,.side-vr.fix .sv-en{padding:24px 12px 8px!important;justify-content:center;gap:3px}
+ .side-vr.fix b{font-size:13.5px!important;margin:0!important}
+ .side-vr.fix em{margin:2px 0 0!important;padding:3px 10px!important;font-size:11.5px!important}
+ .side-vr.fix .erid{margin:1px 0 0!important;font-size:8px}
+ .side-vr.fix .ad{top:6px;left:10px;font-size:9.5px;padding:1px 6px}
+}
+@media (min-width:1200px) and (max-height:780px){.side-vr.fix>a,.side-vr.fix .sv-en{padding:21px 12px 6px!important}.side-vr.fix b{font-size:13px!important;line-height:1.15}.side-vr.fix .ad{top:4px}}
